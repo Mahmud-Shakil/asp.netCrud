@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Projects.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="dist/css/menu-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="wrapper">
+
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+
+                    <Center class="profile">
+                    <img src="dist/img/Te.png" alt=""><p></p>
+                    </Center>
+                    <ul>
+                    <li class="item">
+                        <a href="Home" class="menu-btn"><i class="fas fa-laptop-house"></i><span>Home</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="ObjCrud" class="menu-btn"><i class="fas fa-object-ungroup"></i><span>Object Crud</span></a>
+                    </li>
+                     <li class="item">
+                        <a href="SqlCrud" class="menu-btn"><i class="fas fa-database"></i><span>SQL Crud</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="EntityCrud" class="menu-btn"><i class="fas fa-server"></i><span>Entity Crud</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="Controls" class="menu-btn"><i class="fas fa-gamepad"></i><span>View Controls</span></a>
+                    </li>
+
+                    <li class="item">
+                        <asp:LinkButton class="menu-btn" ID="linkBtnReport" runat="server" OnClick="linkBtnReport_Click" CausesValidation="false"><i class="fas fa-desktop"></i><span>View Report</span></asp:LinkButton>
+                       
+
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--sidebar end-->
+            <!--header menu start-->
+            <div class="header">
+                <div class="header-menu">
+                    <div class="title"><span class="title-hide"><span class="sec-span">Techy</span></span></div>
+                    <div class="sidebar-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                      
+                          <asp:Label ID="lblloggedInUser" runat="server" Text="" class="userName"></asp:Label>
+   
+                        <li> <asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click" CausesValidation="false"><i class="fas fa-power-off"></i></asp:LinkButton></li>
+                    </ul>
+                </div>
+            </div>
+            <!--header menu end-->
+            <!--main container start-->
+            <div class="main-container">
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            </div>
+ 
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="dist/js/menu.js"></script>
+</body>
+</html>
